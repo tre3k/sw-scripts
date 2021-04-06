@@ -24,6 +24,7 @@ fit_from = 0
 
 fit_function(_a,_xc,_d,_y0,x) = -_a*atan((x-_xc)/_d)/pi + _a*0.5 + _y0
 
+#fit [fit_from:] fit_function(a,xc,d,y0,x) FILENAME using 1:8:9 with yerror via a,xc,d,y0
 fit [fit_from:] fit_function(a,xc,d,y0,x) FILENAME using 1:8 via a,xc,d,y0
 
 set yrange[0:]
