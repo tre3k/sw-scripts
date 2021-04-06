@@ -6,8 +6,6 @@ for file in $FILES
 do
     echo $file
     gnuplot -c plot-averages.gp $file
-
-
     directory=`dirname ${file}`
 done
 
@@ -15,3 +13,4 @@ done
 gnuplot -c plot-theta_c.gp $directory
 
 gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -sOutputFile=$directory/averages.pdf $directory/*.eps
+
