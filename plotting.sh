@@ -11,8 +11,7 @@ do
     directory=`dirname ${file}`
 done
 
-#cd $directory 
-gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -sOutputFile=$directory/averages.pdf $directory/*.eps
-
 ./parser-fit.py $directory
 gnuplot -c plot-theta_c.gp $directory
+
+gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -sOutputFile=$directory/averages.pdf $directory/*.eps
